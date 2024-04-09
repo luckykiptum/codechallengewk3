@@ -23,7 +23,7 @@ let availableTickets = document.getElementById("ticket-num")
 function getFilms() {
     let filmsList = document.getElementById('films');
 
-    fetch("http://localhost:3000/films")
+    fetch("https://json-server-i3aj.onrender.com/films")
         .then(res => res.json())
         .then((data) => {
         const firstObj= data[0]
