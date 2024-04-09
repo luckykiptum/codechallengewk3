@@ -7,16 +7,13 @@ let title = document.getElementById('title')
 
 let runtime = document.getElementById('runtime')
 
-
 let showtime = document.getElementById('showtime')
-
 
 let description = document.getElementById('film-info')
 
 let movieButton=document.getElementById("btn")
 
 let movieCapacity=document.getElementById("capacity")
-
 
 let movieSoldTicket=document.getElementById("sold")
  
@@ -45,13 +42,11 @@ function getFilms() {
         image.src = firstObj4.poster
 
 
+
             data.forEach(film => {
 
                 let list = document.createElement('li');
                 list.innerText = film.title;
-
-
-
 
                 list.addEventListener('click', () => {
                      getFilmDetails(film);
@@ -67,30 +62,21 @@ function getFilms() {
 
 function getFilmDetails(film){
 
-
 image.src =film.poster;
-
-
 
 title.innerText = `${film.title}`;
 
-
 runtime.innerText = `${film.runtime}`;
-
 
 showtime.innerText = `${film.showtime}`;
 
-
 description.innerText = `${film.description}`;
-
 
 movieCapacity.innerText = `${film.capacity}`;
 
-
 movieSoldTicket.innerText = `${film.tickets_sold}`;
 
-
-availableTickets = movieCapacity-movieSoldTicket;
+availableTickets.innerText = film.capacity-film.tickets_sold
 
 }
 
